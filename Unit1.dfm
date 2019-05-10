@@ -1,0 +1,143 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 353
+  ClientWidth = 910
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object sListView1: TsListView
+    Left = 8
+    Top = 8
+    Width = 679
+    Height = 337
+    Columns = <
+      item
+        AutoSize = True
+        Caption = 'Trigger'
+      end
+      item
+        AutoSize = True
+        Caption = 'Path/URL'
+      end
+      item
+        AutoSize = True
+        Caption = 'Type'
+      end>
+    PopupMenu = PopupMenu1
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object RichEdit1: TRichEdit
+    Left = 693
+    Top = 8
+    Width = 652
+    Height = 89
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Zoom = 100
+    OnChange = RichEdit1Change
+  end
+  object sButton1: TsButton
+    Left = 712
+    Top = 224
+    Width = 75
+    Height = 25
+    Caption = 'sButton1'
+    TabOrder = 2
+    OnClick = sButton1Click
+  end
+  object Button1: TButton
+    Left = 781
+    Top = 273
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Edit1: TEdit
+    Left = 781
+    Top = 304
+    Width = 121
+    Height = 21
+    TabOrder = 4
+    Text = 'Edit1'
+  end
+  object Timer1: TTimer
+    Interval = 300
+    OnTimer = Timer1Timer
+    Left = 208
+    Top = 136
+  end
+  object sSkinManager1: TsSkinManager
+    ButtonsOptions.OldGlyphsMode = True
+    InternalSkins = <>
+    SkinDirectory = 'c:\Skins'
+    SkinName = 'MetroUI'
+    SkinInfo = '14.01'
+    ThirdParty.ThirdEdits = ' '
+    ThirdParty.ThirdButtons = 'TButton'
+    ThirdParty.ThirdBitBtns = ' '
+    ThirdParty.ThirdCheckBoxes = ' '
+    ThirdParty.ThirdGroupBoxes = ' '
+    ThirdParty.ThirdListViews = ' '
+    ThirdParty.ThirdPanels = ' '
+    ThirdParty.ThirdGrids = ' '
+    ThirdParty.ThirdTreeViews = ' '
+    ThirdParty.ThirdComboBoxes = ' '
+    ThirdParty.ThirdWWEdits = ' '
+    ThirdParty.ThirdVirtualTrees = ' '
+    ThirdParty.ThirdGridEh = ' '
+    ThirdParty.ThirdPageControl = ' '
+    ThirdParty.ThirdTabControl = ' '
+    ThirdParty.ThirdToolBar = ' '
+    ThirdParty.ThirdStatusBar = ' '
+    ThirdParty.ThirdSpeedButton = ' '
+    ThirdParty.ThirdScrollControl = ' '
+    ThirdParty.ThirdUpDown = ' '
+    ThirdParty.ThirdScrollBar = ' '
+    ThirdParty.ThirdStaticText = ' '
+    ThirdParty.ThirdNativePaint = ' '
+    Left = 56
+    Top = 112
+  end
+  object Codec1: TCodec
+    AsymetricKeySizeInBits = 1024
+    AdvancedOptions2 = []
+    CryptoLibrary = CryptographicLibrary1
+    Left = 424
+    Top = 144
+    StreamCipherId = 'native.StreamToBlock'
+    BlockCipherId = 'native.3DES.2'
+    ChainId = 'native.CBC'
+  end
+  object CryptographicLibrary1: TCryptographicLibrary
+    Left = 312
+    Top = 144
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 504
+    Top = 144
+    object A1: TMenuItem
+      Caption = 'Add'
+      OnClick = A1Click
+    end
+    object N1: TMenuItem
+      Caption = 'Delete'
+    end
+  end
+end

@@ -1,0 +1,104 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, shellapi;
+
+type
+  TForm1 = class(TForm)
+    Timer1: TTimer;
+    procedure Timer1Timer(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    doShit: boolean end;
+
+  var
+    Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+function DirectoryIsEmpty(Directory: string): boolean;
+var
+  SR: TSearchRec;
+  i: Integer;
+begin
+  Result := False;
+  FindFirst(IncludeTrailingPathDelimiter(Directory) + '*', faAnyFile, SR);
+  for i := 1 to 2 do
+    if (SR.Name = '.') or (SR.Name = '..') then
+      Result := FindNext(SR) <> 0;
+  FindClose(SR);
+end;
+
+Function DoShitFun(): boolean;
+var
+  F: TextFile;
+  S: string;
+begin
+  Unit1.Form1.Timer1.Enabled := False;
+  if fileExists('C:\Users\Dexuh\Dropbox\Google\test.txt') then
+  begin
+
+    Form1.Caption := 'Test';
+
+    deleteFile('C:\Users\Dexuh\Dropbox\Google\test.txt');
+    Unit1.Form1.Timer1.Enabled := True
+  end;
+
+  if fileExists('C:\Users\Dexuh\Dropbox\Google\Open.txt') then
+  begin
+
+      AssignFile(F, 'C:\Users\Dexuh\Dropbox\Google\Open.txt');
+      Reset(F);
+      ReadLn(F, S);
+      form1.caption := S;
+
+
+      CloseFile(F);
+
+      if lowercase(s) = 'notepad' then
+      begin
+        ShellExecute(HInstance, 'open', 'c:\Windows\notepad.exe', nil, nil, SW_SHOWNORMAL) ;
+      end;
+
+      if lowercase(s) = 'steam' then
+      begin
+        ShellExecute(HInstance, 'open', 'C:\Program Files (x86)\Steam\steam.exe', nil, nil, SW_SHOWNORMAL) ;
+      end;
+
+      if lowercase(s) = 'google' then
+      begin
+      ShellExecute(HInstance,'open','https://google.com',nil,nil, SW_SHOWNORMAL);
+      end;
+
+      if lowercase(s) = 'soundcloud' then
+      begin
+      ShellExecute(HInstance,'open','https://soundcloud.com',nil,nil, SW_SHOWNORMAL);
+      end;
+
+
+
+      deleteFile('C:\Users\Dexuh\Dropbox\Google\open.txt');
+      Unit1.Form1.Timer1.Enabled := True
+  end;
+
+end;
+
+procedure TForm1.Timer1Timer(Sender: TObject);
+begin
+  if DirectoryIsEmpty('C:\Users\Dexuh\Dropbox\Google') = False then
+  begin
+
+    DoShitFun()
+
+  end;
+
+end;
+
+end.

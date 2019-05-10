@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/03/26 15:54:31.000.239,=C:\Users\Dexuh\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/26 16:32:16.000.502,C:\Users\Dexuh\Desktop\Projects\Voice Activation\Unit1.pas=C:\Users\Dexuh\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2019/03/26 16:32:16.000.502,C:\Users\Dexuh\Desktop\Projects\Voice Activation\Unit1.dfm=C:\Users\Dexuh\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2019/03/26 16:32:17.000.123,C:\Users\Dexuh\Desktop\Projects\Voice Activation\Project1.dproj=C:\Users\Dexuh\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2019/04/06 00:56:56.000.668,=C:\Users\Dexuh\Desktop\Projects\Delphi\Voice Activation\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>
